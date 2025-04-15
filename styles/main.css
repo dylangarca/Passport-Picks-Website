@@ -1,0 +1,100 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+h1, h2, h5 {
+  font-weight: 600;
+}
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.navbar-nav .nav-link {
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+.btn-dark {
+  background-color: #222;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+form input, form textarea {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  outline: none;
+}
+
+footer {
+  background-color: #e9ecef;
+  border-top: 1px solid #ddd;
+}
+
+footer strong {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+footer ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+footer p, footer a {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer a:hover {
+  color: #007bff;
+}
