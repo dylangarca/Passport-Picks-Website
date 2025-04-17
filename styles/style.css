@@ -1,0 +1,121 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    background-color: #004d99;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #0066cc;
+    border-radius: 5px;
+  }
+  
+  /* Quiz Form */
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #004d99;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0066cc;
+  }
+  
+  /* Result */
+  .result {
+    background-color: #e0f7fa;
+    border-left: 5px solid #00796b;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  
+  .result h2 {
+    margin-bottom: 10px;
+    color: #004d40;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #004d99;
+    color: #fff;
+    border-top: 3px solid #003366;
+  }
+  

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Find Your Perfect Travel Destination</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html" class="active">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="travelQuiz">
+      <div class="question">
+        <label>1. What type of traveler are you?</label><br />
+        <select name="travelerType">
+          <option value="adventure">Adventure Seeker</option>
+          <option value="relaxation">Relaxation Lover</option>
+          <option value="culture">Culture Explorer</option>
+          <option value="foodie">Food Enthusiast</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>2. Are you traveling with anyone?</label><br />
+        <select name="companions" onchange="handleCompanionChange(this.value)">
+          <option value="solo">Solo</option>
+          <option value="partner">Partner</option>
+          <option value="friends">Friends</option>
+          <option value="family">Family</option>
+        </select>
+      </div>
+
+      <div class="question" id="soloQuestion" style="display: none;">
+        <label>2a. Is this your first solo trip?</label><br />
+        <select name="firstSolo">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>3. What climate do you prefer?</label><br />
+        <select name="climate">
+          <option value="warm">Warm and sunny</option>
+          <option value="cool">Cool and crisp</option>
+          <option value="mixed">I like a mix</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label>4. What’s your budget?</label><br />
+        <select name="budget">
+          <option value="low">Low (Budget-friendly)</option>
+          <option value="medium">Moderate</option>
+          <option value="high">Luxury</option>
+        </select>
+      </div>
+
+      <button type="button" onclick="showResults()">Find My Destination</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 Travel Matcher. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleCompanionChange(value) {
+      const soloQ = document.getElementById("soloQuestion");
+      soloQ.style.display = value === "solo" ? "block" : "none";
+    }
+
+    function showResults() {
+      const form = document.forms["travelQuiz"];
+      const type = form["travelerType"].value;
+      const companions = form["companions"].value;
+      const firstSolo = companions === "solo" ? form["firstSolo"].value : "n/a";
+      const climate = form["climate"].value;
+      const budget = form["budget"].value;
+
+      let destination = "somewhere unique!";
+      if (type === "adventure" && climate === "warm" && budget !== "low") {
+        destination = "Costa Rica";
+      } else if (type === "relaxation" && companions === "partner" && climate === "warm") {
+        destination = "Bora Bora";
+      } else if (type === "culture" && climate === "cool") {
+        destination = "Kyoto, Japan";
+      } else if (type === "foodie" && climate === "mixed") {
+        destination = "Barcelona, Spain";
+      } else if (companions === "solo" && firstSolo === "yes") {
+        destination = "Lisbon, Portugal";
+      } else if (companions === "family" && budget === "medium") {
+        destination = "Orlando, Florida";
+      } else {
+        destination = "New York City";
+      }
+
+      document.getElementById("result").innerHTML =
+        `<h2>Your Recommended Travel Destination:</h2><p>${destination}</p>`;
+    }
+  </script>
+</body>
+</html>
