@@ -91,21 +91,32 @@
       const climate = form["climate"].value;
       const budget = form["budget"].value;
 
-      let destination = "somewhere unique!";
-      if (type === "adventure" && climate === "warm" && budget !== "low") {
-        destination = "Costa Rica";
+      let destination = "somewhere amazing!";
+
+      if (type === "adventure" && companions === "solo" && firstSolo === "no" && climate === "warm" && budget === "low") {
+      destination = "Thailand";
+      } else if (type === "adventure" && climate === "warm" && budget === "medium") {
+      destination = "Costa Rica";
+      } else if (type === "adventure" && climate === "cool") {
+      destination = "New Zealand";
       } else if (type === "relaxation" && companions === "partner" && climate === "warm") {
-        destination = "Bora Bora";
-      } else if (type === "culture" && climate === "cool") {
-        destination = "Kyoto, Japan";
-      } else if (type === "foodie" && climate === "mixed") {
-        destination = "Barcelona, Spain";
+      destination = budget === "high" ? "Maldives" : "Hawaii";
+      } else if (type === "culture" && climate === "cool" && budget !== "high") {
+      destination = "Kyoto, Japan";
+      } else if (type === "culture" && climate === "mixed" && budget === "medium") {
+      destination = "Florence, Italy";
+      } else if (type === "foodie" && climate === "warm") {
+      destination = budget === "high" ? "Singapore" : "Mexico City";
       } else if (companions === "solo" && firstSolo === "yes") {
-        destination = "Lisbon, Portugal";
-      } else if (companions === "family" && budget === "medium") {
-        destination = "Orlando, Florida";
+      destination = "Lisbon, Portugal";
+      } else if (companions === "family" && climate === "mixed" && budget === "medium") {
+      destination = "Orlando, Florida";
+      } else if (companions === "friends" && type === "adventure") {
+      destination = "Peru";
+      } else if (climate === "mixed" && budget === "medium") {
+      destination = "New York City";
       } else {
-        destination = "New York City";
+      destination = "Barcelona, Spain";
       }
 
       document.getElementById("result").innerHTML =
