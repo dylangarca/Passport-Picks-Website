@@ -4,26 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Travel Quiz</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Find Your Perfect Travel Destination</h1>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h3 mb-0">Find Your Perfect Travel Destination</h1>
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html" class="active">Quiz</a></li>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="quiz.html" id="quizDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Quiz
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="quizDropdown">
+              <li><a class="dropdown-item" href="quiz.html">Take the Quiz</a></li>
+              <li><a class="dropdown-item" href="results.html">Quiz Results</a></li>
+            </ul>
+          </li>
+          
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <form id="travelQuiz">
-      <div class="question">
-        <label>1. What type of traveler are you?</label><br />
-        <select name="travelerType">
+  <main class="container py-5">
+    <form id="travelQuiz" class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label class="form-label">1. What type of traveler are you?</label>
+        <select name="travelerType" class="form-select">
           <option value="adventure">Adventure Seeker</option>
           <option value="relaxation">Relaxation Lover</option>
           <option value="culture">Culture Explorer</option>
@@ -31,9 +44,9 @@
         </select>
       </div>
 
-      <div class="question">
-        <label>2. Are you traveling with anyone?</label><br />
-        <select name="companions" onchange="handleCompanionChange(this.value)">
+      <div class="mb-3">
+        <label class="form-label">2. Are you traveling with anyone?</label>
+        <select name="companions" class="form-select" onchange="handleCompanionChange(this.value)">
           <option value="solo">Solo</option>
           <option value="partner">Partner</option>
           <option value="friends">Friends</option>
@@ -41,40 +54,42 @@
         </select>
       </div>
 
-      <div class="question" id="soloQuestion" style="display: none;">
-        <label>2a. Is this your first solo trip?</label><br />
-        <select name="firstSolo">
+      <div class="mb-3" id="soloQuestion" style="display: none;">
+        <label class="form-label">2a. Is this your first solo trip?</label>
+        <select name="firstSolo" class="form-select">
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
       </div>
 
-      <div class="question">
-        <label>3. What climate do you prefer?</label><br />
-        <select name="climate">
+      <div class="mb-3">
+        <label class="form-label">3. What climate do you prefer?</label>
+        <select name="climate" class="form-select">
           <option value="warm">Warm and sunny</option>
           <option value="cool">Cool and crisp</option>
           <option value="mixed">I like a mix</option>
         </select>
       </div>
 
-      <div class="question">
-        <label>4. What’s your budget?</label><br />
-        <select name="budget">
+      <div class="mb-4">
+        <label class="form-label">4. What’s your budget?</label>
+        <select name="budget" class="form-select">
           <option value="low">Low (Budget-friendly)</option>
           <option value="medium">Moderate</option>
           <option value="high">Luxury</option>
         </select>
       </div>
 
-      <button type="button" onclick="showResults()">Find My Destination</button>
+      <button type="button" onclick="showResults()" class="btn btn-primary w-100">Find My Destination</button>
     </form>
 
-    <div id="result" class="result"></div>
+    <div id="result" class="mt-5"></div>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Travel Matcher. All rights reserved.</p>
+  <footer class="bg-light py-3">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 Travel Matcher. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
@@ -94,34 +109,41 @@
       let destination = "somewhere amazing!";
 
       if (type === "adventure" && companions === "solo" && firstSolo === "no" && climate === "warm" && budget === "low") {
-      destination = "Thailand";
+        destination = "Thailand";
       } else if (type === "adventure" && climate === "warm" && budget === "medium") {
-      destination = "Costa Rica";
+        destination = "Costa Rica";
       } else if (type === "adventure" && climate === "cool") {
-      destination = "New Zealand";
+        destination = "New Zealand";
       } else if (type === "relaxation" && companions === "partner" && climate === "warm") {
-      destination = budget === "high" ? "Maldives" : "Hawaii";
+        destination = budget === "high" ? "Maldives" : "Hawaii";
       } else if (type === "culture" && climate === "cool" && budget !== "high") {
-      destination = "Kyoto, Japan";
+        destination = "Kyoto, Japan";
       } else if (type === "culture" && climate === "mixed" && budget === "medium") {
-      destination = "Florence, Italy";
+        destination = "Florence, Italy";
       } else if (type === "foodie" && climate === "warm") {
-      destination = budget === "high" ? "Singapore" : "Mexico City";
+        destination = budget === "high" ? "Singapore" : "Mexico City";
       } else if (companions === "solo" && firstSolo === "yes") {
-      destination = "Lisbon, Portugal";
+        destination = "Lisbon, Portugal";
       } else if (companions === "family" && climate === "mixed" && budget === "medium") {
-      destination = "Orlando, Florida";
+        destination = "Orlando, Florida";
       } else if (companions === "friends" && type === "adventure") {
-      destination = "Peru";
+        destination = "Peru";
       } else if (climate === "mixed" && budget === "medium") {
-      destination = "New York City";
+        destination = "New York City";
       } else {
-      destination = "Barcelona, Spain";
+        destination = "Barcelona, Spain";
       }
 
-      document.getElementById("result").innerHTML =
-        `<h2>Your Recommended Travel Destination:</h2><p>${destination}</p>`;
+      document.getElementById("result").innerHTML = `
+        <div class="card shadow-sm p-4 mt-4">
+          <h2 class="h4 mb-3">Your Recommended Travel Destination:</h2>
+          <p class="lead">${destination}</p>
+        </div>
+      `;
     }
   </script>
+
+  <!-- Bootstrap JS (optional but good to have) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
