@@ -82,82 +82,32 @@ main h1 {
   color: #00695c;
 }
 
-.contact-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 50px;
-  gap: 50px;
+.privacy-content {
+  background-color: #ffffffcc;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 121, 107, 0.2);
+  margin: 50px auto;
+  max-width: 900px;
 }
 
-/* Left Text */
-.contact-text {
-  flex: 1 1 300px;
-}
-
-.contact-text h3 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.privacy-content h2 {
   color: #00796b;
-}
-
-.contact-text p {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* Right Form */
-.contact-form {
-  flex: 1 1 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px 16px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background: #ffffffcc;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #00796b;
-  box-shadow: 0 0 5px rgba(0, 121, 107, 0.4);
-  outline: none;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.btn {
-  background-color: #00796b;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  width: fit-content;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
 }
 
-.btn:hover {
-  background-color: #004d40;
-  transform: scale(1.05);
+.privacy-content p {
+  margin: 15px 0;
+  color: #555;
+}
+
+.privacy-content ul {
+  margin: 15px 0 15px 20px;
+}
+
+.privacy-content li {
+  margin-bottom: 10px;
 }
 
 /* Footer */
@@ -197,8 +147,19 @@ footer {
 }
 
 .footer-columns .btn {
+  background-color: #00796b;
+  color: white;
   padding: 10px 16px;
+  border: none;
+  border-radius: 30px;
   font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-columns .btn:hover {
+  background-color: #004d40;
+  transform: scale(1.05);
 }
 
 .tiny-text {
@@ -224,15 +185,11 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-
-  .contact-section {
-    flex-direction: column;
-  }
-
   .footer-columns {
     flex-direction: column;
+  }
+
+  .privacy-content {
+    padding: 20px;
   }
 }

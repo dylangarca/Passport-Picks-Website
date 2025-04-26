@@ -3,31 +3,34 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: #e0f7fa; /* Light tropical ocean blue */
+  color: #2e4a46; /* Deep teal */
 }
 
 h1, h2, h5 {
   font-weight: 600;
+  color: #00695c; /* Deeper ocean teal */
 }
 
 .navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #1a1a1a;
+  color: #004d40;
 }
 
 .navbar-nav .nav-link {
   margin-right: 15px;
   transition: color 0.3s ease;
+  color: #00796b;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #007bff;
+  color: #ff7043; /* Tropical coral */
 }
 
 section {
@@ -35,13 +38,13 @@ section {
 }
 
 .btn-dark {
-  background-color: #222;
+  background-color: #00796b; /* Teal */
   border: none;
   transition: all 0.3s ease;
 }
 
 .btn-dark:hover {
-  background-color: #444;
+  background-color: #004d40;
   transform: scale(1.05);
 }
 
@@ -51,6 +54,7 @@ section {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  background-color: #ffffff;
 }
 
 .card:hover {
@@ -69,14 +73,15 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  border-color: #ff7043;
+  box-shadow: 0 0 0 2px rgba(255,112,67,0.2);
   outline: none;
 }
 
 footer {
-  background-color: #e9ecef;
+  background-color: #b2ebf2; /* Lighter tropical blue */
   border-top: 1px solid #ddd;
+  padding-top: 30px;
 }
 
 footer strong {
@@ -92,9 +97,9 @@ footer ul li:hover {
 
 footer p, footer a {
   font-size: 0.9rem;
-  color: #666;
+  color: #004d40;
 }
 
 footer a:hover {
-  color: #007bff;
+  color: #ff7043;
 }
