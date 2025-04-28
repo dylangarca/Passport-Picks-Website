@@ -18,7 +18,15 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="quiz.html" id="quizDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Quiz
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="quizDropdown">
+               <li><a class="dropdown-item" href="quiz.html">Take the Quiz</a></li>
+               <li><a class="dropdown-item" href="results.html">Quiz Results</a></li>
+             </ul>
+           </li>
           <li class="nav-item"><a class="nav-link" href="popular.html">Trending Travel Locations</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link btn btn-dark text-white" href="contact.html">Contact</a></li>
